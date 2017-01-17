@@ -1,0 +1,7 @@
+*
+**/*
+!/.bashrc
+!/.profile
+!/.ssh/config
+!/.zshrc
+!/.gitignore/dotfiles-profile

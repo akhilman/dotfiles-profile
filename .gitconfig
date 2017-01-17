@@ -1,0 +1,13 @@
+[user]
+	name = Ildar Akhmetgaleev\n
+	email = akhilman@gmail.com
+[core]
+	autocrlf = input
+	safecrlf = true
+[push]
+	default = simple
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
