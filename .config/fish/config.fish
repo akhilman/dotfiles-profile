@@ -5,37 +5,50 @@
 ##
 
 # wttr.in
-function wttr
-    if [ -z $argv ]
+function wttr \
+--argument-names 'place' \
+--description 'Show weather'
+    if [ -z $place ]
         set place kemerovo
-    else
-        set place $argv[1]
     end
     curl wttr.in/$place | less -R
 end
 
 # tmux
-function tmx
-    if [ -z $argv ]
+function tmx \
+--argument-names 'session' \
+--description 'Create or attach to tmux sesssion'
+    if [ -z $session ]
         set session main
-    else
-        set session $argv[1]
     end
     cd ~
     tmux new-session -A -s $session
 end
-alias tmless="tmux capture-pane -S -; and tmux save-buffer - | less"
+
+function tmless \
+--description 'Show tmux log in pager'
+    tmux capture-pane -S
+        and tmux save-buffer - | less
+end
 
 # stuff
-alias trm=trash
-alias ls="ls --color=auto"
+function trm \
+--description 'Move files to trash'
+    count $argv > /dev/null
+        or return
+    trash $argv
+end
+
+function ls \
+--description 'List contents of directory'
+    command ls --color=auto $argv
+end
 
 
 ###
 # Welcome
 ##
 
-# welcome
 function fish_greeting;
     last -w3 $whami | head -n 3;
     set have_a_mail (echo quit | mail 2> /dev/null | sed -n 's/.*: \([0-9]* messages*\).*/\1/p')
@@ -89,7 +102,7 @@ function fish_title
 end
 funcsave fish_title
 
-#
+
 ###
 # Powerline
 ##
@@ -99,4 +112,3 @@ if status --is-interactive
 	. /usr/share/powerline/fish/powerline-setup.fish
 	powerline-setup
 end
-
