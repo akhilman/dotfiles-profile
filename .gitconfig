@@ -11,3 +11,5 @@
 	ci = commit
 	st = status
 	br = branch
+[credential]
+	helper = cache --timeout=3600
