@@ -34,8 +34,6 @@ end
 # stuff
 function trm \
 --description 'Move files to trash'
-    count $argv > /dev/null
-        or return
     trash $argv
 end
 
