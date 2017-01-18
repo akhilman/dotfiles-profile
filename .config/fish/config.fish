@@ -93,7 +93,9 @@ funcsave fish_title
 ###
 # Powerline
 ##
-if status --is-interactive; and [ -e /usr/share/powerline/fish/powerline-setup.fish ];
+if status --is-interactive
+ 		and [ "$COLORTERM" = "truecolor" ]
+		and [ -e /usr/share/powerline/fish/powerline-setup.fish ]
 	. /usr/share/powerline/fish/powerline-setup.fish
 	powerline-setup
 end
