@@ -41,6 +41,7 @@ setopt EXTENDED_GLOB
 
 if [ -f /usr/share/powerline/zsh/powerline.zsh ]
 then
+	powerline-daemon -q
     . /usr/share/powerline/zsh/powerline.zsh
 else
     # VCS info
