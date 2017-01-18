@@ -27,7 +27,7 @@ end
 
 function tmless \
 --description 'Show tmux log in pager'
-    tmux capture-pane -S
+    tmux capture-pane -S -
         and tmux save-buffer - | less
 end
 
