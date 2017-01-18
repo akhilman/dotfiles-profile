@@ -4,9 +4,14 @@ funcdir = $(HOME)/.config/fish/functions
 
 # meta
 
-all: $(funcdir)/fisher.fish $(funcdir)/docker.fish
+default: install
 
-clean:
+install: $(funcdir)/fisher.fish $(funcdir)/docker.fish
+
+update: install
+	fish -c "fisher up"
+
+uninstall:
 	fish -c "fisher ls | fisher rm"
 
 
