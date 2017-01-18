@@ -55,7 +55,7 @@ funcsave fish_greeting
 function postexec --on-event fish_postexec
     if test -n "$CMD_DURATION" -a "$CMD_DURATION" -gt 10000
         printf \a
-        set_color grey
+        set_color blue
         set h (math "$CMD_DURATION / 1000 / 60 / 60")
         set m (math "$CMD_DURATION  / 1000 / 60 % 60")
         set s (math "$CMD_DURATION / 1000 % 60")
