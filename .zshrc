@@ -87,22 +87,19 @@ fi
 
 preexec()
 {
-    if [[ "$TERM" =~ xterm.* ]] || [[ "$TERM" =~ screen.* ]]
+    if [[ "$TERM" =~ xterm.* ]]
     then
 	    print -Pn "\e]0;%n@%m: "
 	    echo -n $2
 	    print -n "\a"
-        ## screen
-        if [[ "$TERM" =~ screen.* ]]
+    elif [[ "$TERM" =~ screen.* ]]
+    then
+        local name=$2
+        if [ "$(echo $name | wc -c)" -gt 16 ]
         then
-            local name=$2
-            if [ "$(echo $name | wc -c)" -gt 16 ]
-            then
-                name="$(echo $name | head -c 14).."
-            fi
-            print -Pn '\033k'$name'\033\\'
+            name="$(echo $name | head -c 14).."
         fi
-        ## end screen
+        print -Pn '\033k'$name'\033\\'
     fi
 }
 
@@ -112,15 +109,13 @@ precmd ()
     local exitstatus=$1
     [[ $exitstatus -ge 128 ]] && psvar[1]=" $signals[$exitstatus-127]" ||
 	psvar[1]=""
-    if [[ "$TERM" =~ xterm.* ]] || [[ "$TERM" =~ screen.* ]]
+    if [[ "$TERM" =~ xterm.* ]]
     then
         print -Pn "\e]0;%n@%m: %~\a"
-        ## screen
-        if [[ "$TERM" =~ screen.* ]]
-        then
-            local name=$(basename $(pwd))
-            print -Pn '\033k'$name\\\$'\033\\'
-        fi
+    elif [[ "$TERM" =~ screen.* ]]
+    then
+        local name=$(basename $(pwd))
+        print -Pn '\033k'$name\\\$'\033\\'
         ## screen end
     fi
     which prompt_adam2_precmd &>> /dev/null && prompt_adam2_precmd; setopt promptsubst # prompt
