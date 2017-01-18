@@ -9,24 +9,37 @@
 #umask 022
 
 
-# this part will loaded only once
+###
+# stuff
+##
+
+export EDITOR=vim
+
+
+###
+# rc files from .local/opt applications
+##
 
 if [ -d $HOME/.local/opt/profile.d ]
 then
-for f in $(find $HOME/.local/opt/profile.d/ -type f)
-do
-    [ -x $f ] && . $f
-done
-unset f
+    for f in $(find $HOME/.local/opt/profile.d/ -type f)
+    do
+        [ -x $f ] && . $f
+    done
+    unset f
 fi
 
+
+###
 # set PATH so it includes user's private bin if it exists
+##
+
 if [ -d "$HOME/bin" ] ; then
-PATH="$HOME/bin:$PATH"
+    PATH="$HOME/bin:$PATH"
 fi
 
 if [ -d "$HOME/.local/bin" ] ; then
-PATH="$HOME/.local/bin:$PATH"
+    PATH="$HOME/.local/bin:$PATH"
 fi
 
 export PATH
@@ -34,15 +47,6 @@ export PATH
 
 ###
 # settings for X
-#
+##
 
 which qt5ct 2>&1 > /dev/null &&  export QT_QPA_PLATFORMTHEME=qt5ct
-
-
-# if running bash
-# if [ -n "$BASH_VERSION" ]; then
-#     # include .bashrc if it exists
-#     if [ -f "$HOME/.bashrc" ]; then
-#     . "$HOME/.bashrc"
-#     fi
-# fi
