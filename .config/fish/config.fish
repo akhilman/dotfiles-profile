@@ -58,7 +58,6 @@ function fish_greeting;
         set color normal
     end
 end
-funcsave fish_greeting
 
 
 ###
@@ -100,7 +99,6 @@ function fish_title
         echo -e \033k$title\033\\
     end
 end
-funcsave fish_title
 
 
 ###
