@@ -52,9 +52,9 @@ funcsave fish_greeting
 # Bell and execution time
 ##
 
-function postexec --on-event fish_postexec
+function postexec_execution_time --on-event fish_postexec
     if test -n "$CMD_DURATION" -a "$CMD_DURATION" -gt 10000
-        printf \a
+        # printf \a  # seems like fish bells by default
         set_color blue
         set h (math "$CMD_DURATION / 1000 / 60 / 60")
         set m (math "$CMD_DURATION  / 1000 / 60 % 60")
