@@ -17,13 +17,13 @@ function fish_prompt --description 'Write out the prompt'
 				commandline -f repaint ^/dev/null
 			end
 		end
-		
+
 		function __fish_repaint_host --on-variable fish_color_host --description "Event handler, repaint when fish_color_host changes"
 			if status --is-interactive
 				commandline -f repaint ^/dev/null
 			end
 		end
-		
+
 		function __fish_repaint_status --on-variable fish_color_status --description "Event handler; repaint when fish_color_status changes"
 			if status --is-interactive
 				commandline -f repaint ^/dev/null
