@@ -36,7 +36,7 @@ function fish_line_prompt
     set prompt_left "-" $prompt_status "-" $prompt_duration "-"
     set prompt_right "-" $prompt_date "-"
 
-    set -l line_len (math $COLUMNS - (echo -s $prompt_left $prompt_right | wc -m))
+    set -l line_len (math $COLUMNS - (echo -sn $prompt_left $prompt_right | wc -m))
     if [ $line_len -gt 0 ]
         set prompt_line (printf '%*s' $line_len | tr ' ' '-')
     end
@@ -44,6 +44,6 @@ function fish_line_prompt
     set prompt_left (set_color $fish_color_host) "-" (set_color $fish_color_status) $prompt_status (set_color $fish_color_host) "-" $prompt_duration "-"
     set prompt_right "-" $prompt_date "-"  (set_color normal)
 
-    echo -s $prompt_left $prompt_line $prompt_right
+    echo -sn $prompt_left $prompt_line $prompt_right
 
 end
