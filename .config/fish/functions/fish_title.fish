@@ -14,7 +14,7 @@ function fish_title
             set title (echo "$title" | head -c 18)..
         end
     end
-    if string match -r "screen.*" $TERM > /dev/null
+    if echo $TERM | grep -q "^screen.*"
         echo -e \033k$title\033\\
     else
         echo -e $title
