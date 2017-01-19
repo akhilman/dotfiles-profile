@@ -2,7 +2,7 @@
 # Bell and execution time
 ##
 
-function postexec_execution_time --on-event fish_postexec
+function fish_line_prompt
 
 	set -l last_status $status
     set -l prompt_duration
