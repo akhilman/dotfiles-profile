@@ -9,5 +9,5 @@ function fish_greeting
         printf "You have $have_a_mail\n"
         set color normal
     end
-    fish_line_prompt
+    fish_hline_prompt
 end
