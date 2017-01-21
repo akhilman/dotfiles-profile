@@ -4,6 +4,7 @@ set -x VIRTUAL_ENV_DISABLE_PROMPT 1
 # default colors
 set -qU fish_color_user; or set -U fish_color_user -o green
 set -qU fish_color_host; or set -U fish_color_host -o cyan
+set -qU fish_color_njobs; or set -U fish_color_njobs green
 set -qU fish_color_status; or set -U fish_color_status red
 set -qU fish_color_duration; or set -U fish_color_duration blue
 set -qU fish_color_time; or set -U fish_color_time white
