@@ -65,6 +65,7 @@ function __fish_repaint_bind_mode --on-variable fish_key_bindings
     end
 end
 
-function __fish_line_prompt_postexec --on-event fish_postexec
+# drawing hline
+function __fish_hline_prompt_preprompt --on-event fish_prompt
     echo (fish_hline_prompt)
 end
