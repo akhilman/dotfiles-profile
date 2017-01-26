@@ -5,13 +5,13 @@
 function fish_title
     if [ $_ = 'fish' ]
         set title (prompt_pwd)
-        if [ (echo -m "$title" | wc -c) -gt 20 ]
-            set title (echo "$title" | tail -c 18)..
+        if [ (echo -m "$title" | wc -c) -gt 15 ]
+            set title (echo "$title" | tail -c 13)..
         end
     else
         set title "$argv"
-        if [ (echo -m "$title" | wc -c) -gt 20 ]
-            set title (echo "$title" | head -c 18)..
+        if [ (echo -m "$title" | wc -c) -gt 15 ]
+            set title (echo "$title" | head -c 13)..
         end
     end
     if echo $TERM | grep -q "^screen.*"
