@@ -6,7 +6,9 @@ funcdir = $(HOME)/.config/fish/functions
 
 default: install
 
-install: $(funcdir)/fisher.fish $(funcdir)/docker.fish
+install: $(funcdir)/fisher.fish \
+	$(fishermandir)/docker-fish-completion \
+	$(fishermandir)/prompt-hline \
 
 update: install
 	fish -c "fisher up"
@@ -17,8 +19,11 @@ uninstall:
 
 # plugins
 
-$(funcdir)/docker.fish: $(funcdir)/fisher.fish
+$(fishermandir)/docker-fish-completion: $(funcdir)/fisher.fish
 	fish -c "fisher install barnybug/docker-fish-completion"
+
+$(fishermandir)/prompt-hline: $(funcdir)/fisher.fish
+	fish -c "fisher install akhilman/fish-prompt-hline"
 
 
 # fisherman
