@@ -50,3 +50,12 @@ export PATH
 ##
 
 which qt5ct 2>&1 > /dev/null &&  export QT_QPA_PLATFORMTHEME=qt5ct
+
+
+###
+# powerline
+##
+
+which powerline-daemon 2>&1 > /dev/null \
+    && powerline-daemon 2>&1 > /dev/null \
+    || true
