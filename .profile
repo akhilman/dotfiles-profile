@@ -15,6 +15,8 @@
 
 export EDITOR=vim
 
+. $HOME/.aliases
+
 
 ###
 # rc files from .local/opt applications
