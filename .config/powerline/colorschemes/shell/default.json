@@ -1,0 +1,8 @@
+{
+	"name": "Default",
+	"groups": {
+		"cwd":                       { "fg": "gray9", "bg": "gray0", "attrs": [] },
+		"cwd:current_folder":        { "fg": "gray10", "bg": "gray0", "attrs": ["bold"] },
+		"cwd:divider":               { "fg": "gray7", "bg": "gray0", "attrs": [] }
+	}
+}
