@@ -14,7 +14,6 @@
 ##
 
 export EDITOR=vim
-
 . $HOME/.aliases
 
 
@@ -52,7 +51,8 @@ export PATH
 ##
 
 export GTK_IM_MODULE="xim"
-which qt5ct 2>&1 > /dev/null &&  export QT_QPA_PLATFORMTHEME=qt5ct
+which qt5ct 2>&1 > /dev/null && export QT_QPA_PLATFORMTHEME=qt5ct
+
 
 ###
 # powerline
