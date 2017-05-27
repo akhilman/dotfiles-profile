@@ -14,7 +14,6 @@
 ##
 
 export EDITOR=vim
-. $HOME/.aliases
 
 
 ###
