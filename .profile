@@ -13,7 +13,11 @@
 # stuff
 ##
 
-export EDITOR=vim
+if which nvim 2>&1 > /dev/null
+    export EDITOR=nvim
+else:
+    export EDITOR=vim
+fi
 
 
 ###
