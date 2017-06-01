@@ -14,6 +14,7 @@
 ##
 
 if which nvim 2>&1 > /dev/null
+then
     export EDITOR=nvim
 else:
     export EDITOR=vim
