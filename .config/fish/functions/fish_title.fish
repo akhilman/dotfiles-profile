@@ -9,7 +9,7 @@ function fish_title
     if [ $_ = 'fish' ]
         set title (prompt_pwd)
         if [ (echo -m "$title" | wc -c) -gt 15 ]
-            set title (echo "$title" | tail -c 13)..
+            set title ..(echo "$title" | tail -c 13)
         end
     else
         set title "$argv"
