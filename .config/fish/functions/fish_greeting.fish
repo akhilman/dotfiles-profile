@@ -2,7 +2,7 @@ function fish_greeting
 
     # last logins
 	if which last > /dev/null
-        last -w3 $whami | head -n 3
+        last -w3
     end
 
     # mail
