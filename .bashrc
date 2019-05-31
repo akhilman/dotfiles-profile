@@ -13,6 +13,11 @@ then
     . /etc/bashrc
 fi
 
+if [ -z "$PROFILE_LOADED" ]
+then
+    . $HOME/.profile
+fi
+
 # fix for tmux true color support
 if [ _$TERM == _xterm ] && [ _$COLORTERM == _truecolor ]
 then

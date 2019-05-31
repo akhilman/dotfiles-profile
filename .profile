@@ -8,6 +8,7 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
+export PROFILE_LOADED=true
 
 ###
 # stuff
@@ -43,6 +44,10 @@ if [ -d "$HOME/.luarocks/bin" ] ; then
     PATH="$HOME/.luarocks/bin:$PATH"
 fi
 
+if [ -d "$HOME/.cargo/bin" ] ; then
+    PATH="$HOME/.cargo/bin:$PATH"
+fi
+
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
@@ -68,3 +73,4 @@ which qt5ct 2>&1 > /dev/null && export QT_QPA_PLATFORMTHEME=qt5ct
 which powerline-daemon > /dev/null 2>&1 \
     && powerline-daemon > /dev/null 2>&1 \
     || true
+
