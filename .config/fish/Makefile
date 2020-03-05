@@ -7,6 +7,6 @@ $(fisher):
 	curl https://git.io/fisher --create-dirs -sLo functions/fisher.fish
 
 $(prompt): $(fisher)
-	fish -c fisher add akhilman/fish-prompt-hline
+	fish -c "fisher add akhilman/fish-prompt-hline"
 
 install: $(fisher) $(prompt)
