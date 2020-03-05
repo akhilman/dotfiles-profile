@@ -62,12 +62,17 @@ fi
 
 export PATH
 
-
 ###
 # settings for X
 ##
 
 which qt5ct 2>&1 > /dev/null && export QT_QPA_PLATFORMTHEME=qt5ct
+
+# fix for tmux true color support
+if [ _$TERM == _xterm ] && [ _$COLORTERM == _truecolor ]
+then
+    export TERM=xterm-256color
+fi
 
 
 ###
@@ -78,3 +83,24 @@ which powerline-daemon > /dev/null 2>&1 \
     && powerline-daemon > /dev/null 2>&1 \
     || true
 
+
+###
+# Aliases
+##
+
+# wttr.in
+wttr () {
+    curl wttr.in/${1:-kemerovo} | less -R
+}
+
+# tmux
+tmx() {
+    cd ~
+    tmux new-session -A -s ${1:-main}
+}
+alias tmless="tmux capture-pane -S - && tmux save-buffer - | less"
+
+# stuff
+alias trm=trash
+alias ls="ls --color=auto"
+alias assistant="assistant -stylesheet /home/ildar/.local/src/preferences/css/qt_assistant.css"
