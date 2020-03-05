@@ -1,6 +1,5 @@
 *
 **/*
-!/.bashrc
 !/.profile
 !/.ssh/config
 !/.zshrc
