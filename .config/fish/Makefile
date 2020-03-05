@@ -1,37 +1,12 @@
-fishermandir = $(HOME)/.config/fisherman
-funcdir = $(HOME)/.config/fish/functions
+.DEFAULT_GOAL := install
 
+fisher := functions/fisher.fish
+prompt := functions/fish_hline_prompt.fish
 
-# meta
+$(fisher):
+	curl https://git.io/fisher --create-dirs -sLo functions/fisher.fish
 
-default: install
+$(prompt): $(fisher)
+	fish -c fisher add akhilman/fish-prompt-hline
 
-install: $(funcdir)/fisher.fish \
-	$(fishermandir)/docker-fish-completion \
-	$(fishermandir)/prompt-hline \
-
-update: install
-	fish -c "fisher up"
-
-uninstall:
-	fish -c "fisher ls | fisher rm"
-
-
-# plugins
-
-$(fishermandir)/docker-fish-completion: $(funcdir)/fisher.fish
-	fish -c "fisher install barnybug/docker-fish-completion"
-
-$(fishermandir)/prompt-hline: $(funcdir)/fisher.fish
-	fish -c "fisher install akhilman/fish-prompt-hline"
-
-
-# fisherman
-
-$(funcdir)/fisher.fish: $(fishermandir)/fisherman
-	mkdir -p $(funcdir)
-	ln -s $(fishermandir)/fisherman/fisher.fish $(funcdir)/fisher.fish
-
-$(fishermandir)/fisherman:
-	mkdir -p $(fishermandir)
-	git clone https://github.com/fisherman/fisherman.git $(fishermandir)/fisherman
+install: $(fisher) $(prompt)
