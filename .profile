@@ -62,18 +62,6 @@ fi
 
 export PATH
 
-###
-# settings for X
-##
-
-which qt5ct 2>&1 > /dev/null && export QT_QPA_PLATFORMTHEME=qt5ct
-
-# fix for tmux true color support
-if [ _$TERM == _xterm ] && [ _$COLORTERM == _truecolor ]
-then
-    export TERM=xterm-256color
-fi
-
 
 ###
 # powerline
