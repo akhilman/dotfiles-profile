@@ -44,6 +44,11 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
+
+###
+# tools
+##
+
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
@@ -58,6 +63,11 @@ fi
 
 if [ -d "$HOME/.yarn/bin" ] ; then
     PATH="$HOME/.yarn/bin:$PATH"
+fi
+
+export GOPATH=$HOME/.go
+if [ -d "$GOPATH/bin" ] ; then
+    PATH="$GOPATH/bin/:$PATH"
 fi
 
 export PATH
