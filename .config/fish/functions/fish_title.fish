@@ -14,7 +14,7 @@ function fish_title
     else
         set title "$argv"
         if [ (string length "$title") -gt 15 ]
-            set title (string sub --start -13 "$title")...
+            set title (string sub --length 13 "$title")...
         end
     end
 
