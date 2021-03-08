@@ -15,3 +15,7 @@
 	helper = cache --timeout=3600
 [gpg]
 	program = gpg2
+[pull]
+	rebase = false
+[init]
+	dfaultBranch = master
