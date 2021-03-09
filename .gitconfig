@@ -21,3 +21,4 @@
 	dfaultBranch = master
 [annex]
 	jobs = 4
+	sshcaching = true
