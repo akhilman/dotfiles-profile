@@ -19,3 +19,5 @@
 	rebase = false
 [init]
 	dfaultBranch = master
+[annex]
+	jobs = 4
