@@ -6,13 +6,17 @@ function fish_greeting
     end
 
     # mail
-    set -l have_a_mail
+    set -l new_mail_count
     if which mail > /dev/null 2>&1
-        set have_a_mail (echo quit | mail 2> /dev/null | sed -n 's/.*: \([0-9]* messages*\).*/\1/p')
+        set new_mail_count (echo quit | mail 2> /dev/null | sed -n 's/.*: \([0-9]*\) messages*.*/\1/p')
     end
-    if [ -n "$have_a_mail"  ]
+    if [ \( -n "$new_mail_count" \) -a \( "$new_mail_count" -gt 0 \) ]
         set_color red
-        printf "You have $have_a_mail\n"
+        if [ $new_mail_count -eq 1 ]
+            printf "You have a message\n"
+        else
+            printf "You have $new_mail_count messages\n"
+end
         set_color normal
     end
 
