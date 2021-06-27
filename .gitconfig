@@ -1,6 +1,7 @@
 [user]
 	name = Ildar Akhmetgaleev
 	email = akhilman@gmail.com
+	signingkey = D2806AD1F5C35A92CE1FC2CCCC43E81AB71C1BCF
 [core]
 	autocrlf = input
 	safecrlf = true
