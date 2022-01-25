@@ -1,7 +1,0 @@
-!
-! xrdb ~/.Xresources to reload
-!
-
-! lightdm new session
-xscreensaver.newLoginCommand: dm-tool switch-to-greeter
-
