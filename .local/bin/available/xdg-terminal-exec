@@ -1,0 +1,19 @@
+#!/bin/sh
+case "$XDG_SESSION_DESKTOP" in
+	sway )
+		foot -e $@
+		;;
+	gnome )
+		if which kgx 2>/dev/null; then
+			kgx -e $@
+		else
+			gnome-terminal -e $@
+		fi
+		;;
+	xfce )
+		xfce4-terminal -e $@
+		;;
+	* )
+		xterm -e $@
+		;;
+esac
