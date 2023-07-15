@@ -1,6 +1,12 @@
 *
 **/*
+!/.gitignore.d
+!/.gitignore.d/dotfiles-profile
 !/.profile
 !/.ssh/config
 !/.zshrc
 !/.gitignore/dotfiles-profile
+!/.local/bin/available
+!/.local/bin/available/*
+!/.config/environment.d/available
+!/.config/environment.d/available/*
