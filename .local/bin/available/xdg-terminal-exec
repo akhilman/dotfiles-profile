@@ -4,7 +4,7 @@ case "$XDG_SESSION_DESKTOP" in
 		foot -e $@
 		;;
 	gnome )
-		if which kgx 2>/dev/null; then
+		if which kgx > /dev/null; then
 			kgx -e $@
 		else
 			gnome-terminal -e $@
