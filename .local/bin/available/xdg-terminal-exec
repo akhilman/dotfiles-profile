@@ -1,7 +1,11 @@
 #!/bin/sh
 case "$XDG_SESSION_DESKTOP" in
 	sway )
-		foot -e $@
+		if which alacritty > /dev/null; then
+			alacritty -e $@
+		else
+			foot -e $@
+		fi
 		;;
 	gnome )
 		if which kgx > /dev/null; then
