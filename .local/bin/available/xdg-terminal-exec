@@ -1,23 +1,31 @@
 #!/bin/sh
+
+TERM=xterm
+PROGARG=-e
+
 case "$XDG_SESSION_DESKTOP" in
 	sway )
 		if which alacritty > /dev/null; then
-			alacritty -e $@
+			TERM=alacritty
 		else
-			foot -e $@
+			TERM=foot
+			PROGARG=
 		fi
 		;;
 	gnome )
 		if which kgx > /dev/null; then
-			kgx -e $@
+			TERM=kgx
 		else
-			gnome-terminal -e $@
+			TERM=gnome-terminal
 		fi
 		;;
 	xfce )
-		xfce4-terminal -e $@
-		;;
-	* )
-		xterm -e $@
+		TERM=xfce4-terminal
 		;;
 esac
+
+if [ $# -gt 0 ]; then
+	$TERM $PROGARG $@
+else
+	$TERM
+fi
