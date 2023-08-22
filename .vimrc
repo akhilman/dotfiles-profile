@@ -1,3 +1,5 @@
+"""" ./basic.vim
+
 " This config file is compatible with Vim and can be used as
 "   source ~/.config/nvim/basic.vim
 " form ~/.vimrc
@@ -121,6 +123,10 @@ set mouse=nvh
 
 " More space for messages
 set cmdheight=2
+
+
+"""" ./default_colorscheme.vim
+
 """
 " Tweaked default colour scheme
 ""
@@ -137,3 +143,5 @@ set cmdheight=2
 " highlight LineNr ctermfg=gray guifg=gray
 
 colorscheme murphy
+
+
