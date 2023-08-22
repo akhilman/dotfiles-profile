@@ -13,7 +13,9 @@ case "$XDG_SESSION_DESKTOP" in
 		fi
 		;;
 	gnome )
-		if which kgx > /dev/null; then
+		if which alacritty > /dev/null; then
+			TERM=alacritty
+		elif which kgx > /dev/null; then
 			TERM=kgx
 		else
 			TERM=gnome-terminal
