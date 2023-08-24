@@ -142,6 +142,6 @@ set cmdheight=2
 " highlight VertSplit term=bold cterm=bold gui=bold ctermbg=darkgray guifg=Gray20 guibg=Gray5
 " highlight LineNr ctermfg=gray guifg=gray
 
-colorscheme murphy
+colorscheme torte
 
 
