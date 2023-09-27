@@ -1,5 +1,11 @@
 .DEFAULT_GOAL := install
 
+PLUGINS := \
+	  akhilman/fish-prompt-hline \
+	  edc/bass \
+	  jorgebucaran/fisher
+
+
 TEMP_FILE := $(shell mktemp --suffix .fish)
 
 fisher := functions/fisher.fish
@@ -15,4 +21,5 @@ colorscheme:
 update: $(fisher) colorscheme
 	fish -c "fisher update"
 
-install: $(fisher) update
+install: $(fisher) colorscheme
+	fish -c "fisher install $(PLUGINS)"
