@@ -1,5 +1,5 @@
 if status is-login
 		and functions -q bass
-		and $HOME/.profile
+		and test -e $HOME/.profile
 	bass source $HOME/.profile
 end
