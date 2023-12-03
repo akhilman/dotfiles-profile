@@ -1,0 +1,2 @@
+[$HOME/.config/helix]
+checkout = git clone https://github.com/akhilman/config-helix.git $HOME/.config/helix
