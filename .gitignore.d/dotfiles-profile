@@ -1,10 +1,12 @@
 *
-**/*
 !/.gitignore.d
 !/.gitignore.d/dotfiles-profile
 !/.ssh/config
-!/.gitignore/dotfiles-profile
+!/.local
+!/.local/bin
 !/.local/bin/available
 !/.local/bin/available/*
+!/.config
+!/.config/environment.d
 !/.config/environment.d/available
 !/.config/environment.d/available/*
