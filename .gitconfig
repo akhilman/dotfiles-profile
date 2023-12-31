@@ -17,7 +17,7 @@
 [pull]
 	rebase = false
 [init]
-	dfaultBranch = master
+	defaultBranch = main
 [annex]
 	jobs = 4
 	sshcaching = true
