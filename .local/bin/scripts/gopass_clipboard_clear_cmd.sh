@@ -5,3 +5,5 @@ elif [ x$XDG_SESSION_TYPE = xwayland ]; then
   wl-copy --primary --clear
 fi
 
+# Clearing the clipboard with `kitten clipboard` fails because gopass runs this script in a shell detached from the terminal.
+
