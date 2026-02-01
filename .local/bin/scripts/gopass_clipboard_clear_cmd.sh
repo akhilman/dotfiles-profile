@@ -2,7 +2,7 @@
 if [ x$XDG_SESSION_DESKTOP = xgnome ]; then
   gpaste-client delete-password "$1"
 elif [ x$XDG_SESSION_TYPE = xwayland ]; then
-  wl-copy --primary --clear
+  wl-copy --clear
 fi
 
 # Clearing the clipboard with `kitten clipboard` fails because gopass runs this script in a shell detached from the terminal.
