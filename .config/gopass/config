@@ -1,0 +1,4 @@
+[mounts]
+	path = /home/ildar/.password-store
+[show]
+	safecontent = true
